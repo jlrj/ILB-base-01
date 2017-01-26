@@ -15,11 +15,13 @@ Public Class CreateUser
 
 
         'Create a Connection object.
-        myConn = New SqlConnection("Data Source=JLRJ-LAPTOP\SQL2014EXPRESS;Initial Catalog=ILB-nData;User ID=ILB-User;Password=ilb.1010")
+        'myConn = New SqlConnection("Data Source=JLRJ-LAPTOP\SQL2014EXPRESS;Initial Catalog=ILB-nData;User ID=ILB-User;Password=ilb.1010")
+        myConn = New SqlConnection("Data Source = 184.168.194.77;Initial Catalog=ILB-base-01;User ID=ILB_DB_User;Password=pwd.1234")
+
 
         'Create a Command object.
         myCmd = myConn.CreateCommand
-        myCmd.CommandText = "INSERT INTO T_Usuarios (Nombre, ApPaterno, ApMaterno, TipoUsuario, email, Telefono, Usuario, Password) VALUES " +
+        myCmd.CommandText = "INSERT INTO Tabla_Usuarios (Nombre, ApPaterno, ApMaterno, TipoUsuario, email, Telefono, Usuario, Password) VALUES " +
                                         "('" + txtNombreUsuario.Text + "','" + txtApellidoPaterno.Text + "','" + txtApellidoMaterno.Text +
                         "','" + txtTipoUsuario.Text + "','" + txtEmail.Text + "','" + txtTelefono.Text +
                         "','" + txtUsuario.Text + "','" + txtPassword.Text + "')"

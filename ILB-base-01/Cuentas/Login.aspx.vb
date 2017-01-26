@@ -1,6 +1,7 @@
 ﻿
 
 Imports System.Data.SqlClient
+Imports System.Xml.Linq
 
 Public Class Login1
     Inherits System.Web.UI.Page
@@ -17,12 +18,12 @@ Public Class Login1
 
 
         'Create a Connection object.
-        myConn = New SqlConnection("Data Source=JLRJ-LAPTOP\SQL2014EXPRESS;Initial Catalog=ILB-nData;User ID=ILB-User;Password=ilb.1010")
+        myConn = New SqlConnection("Data Source = 184.168.194.77;Initial Catalog=ILB-base-01;User ID=ILB_DB_User;Password=pwd.1234")
 
         'Create a Command object.
         myCmd = myConn.CreateCommand
-        'myCmd.CommandText = "Select * from T_Usuarios where Usuario ='" + txtUsuario.Text + "'" + " And Password = '" + txtPassword.Text + "'"
-        myCmd.CommandText = "Select * from T_Usuarios where Password = '" + txtPassword.Text + "'"
+        myCmd.CommandText = "Select * from Tabla_Usuarios where Usuario ='" + txtUsuario.Text + "'" + " And Password = '" + txtPassword.Text + "'"
+        'myCmd.CommandText = "Select * from Tabla_Usuarios where Password = '" + txtPassword.Text + "'"
 
 
 
@@ -47,7 +48,7 @@ Public Class Login1
         If myReader.HasRows = True Then
             MsgBox("Login esxitoso!")
         Else
-            MsgBox("Verificar Usuario / COntraseña")
+            MsgBox("Verificar Usuario / Contraseña")
         End If
 
 
