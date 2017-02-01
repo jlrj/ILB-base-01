@@ -46,9 +46,9 @@ Public Class Login1
 
 
         If myReader.HasRows = True Then
-            MsgBox("Login esxitoso!")
+            glbClase.gpAlert("Login esxitoso!")
         Else
-            MsgBox("Verificar Usuario / Contraseña")
+            glbClase.gpAlert("Verificar Usuario / Contraseña")
         End If
 
 
@@ -58,7 +58,7 @@ Public Class Login1
         '    results = results & myReader.GetString(0) & vbTab & myReader.GetString(1) & vbLf
         'Loop
         'Display results.
-        MsgBox(results)
+        'MsgBox(results)
 
         'Close the reader and the database connection.
         myReader.Close()

@@ -43,8 +43,8 @@ Public Class CreateUser
         '    results = results & myReader.GetString(0) & vbTab & myReader.GetString(1) & vbLf
         'Loop
         'Display results.
-        MsgBox(results)
-
+        'MsgBox(results)
+        glbClase.gpAlert(results)
         'Close the reader and the database connection.
         myReader.Close()
         myConn.Close()
